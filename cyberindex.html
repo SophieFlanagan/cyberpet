@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="cyberstyle.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- LANDING PAGE -->
+    <div class="backgroundImages">
+      <img
+        id="backgroundImage1"
+        src="./Images/Background/2b&wpets.jpg"
+        alt="2 black/white tamagotchis"
+      />
+      <img
+        id="backgroundImage2"
+        class="monkey-background"
+        src="./Images/Monkey/jungle.jpg"
+        alt="background image of jungle"
+      />
+      <img
+        id="backgroundImage3"
+        class="rabbit-background"
+        src="./Images/Rabbit/rabbitbackground.jpg"
+        alt="background image of rabbit burrow"
+      />
+    </div>
+
+    <!-- PROJECT NAME -->
+    <div class="heading-container">
+      <h1 id="heading">Pet-A-Byte</h1>
+    </div>
+
+    <!-- Landing IMAGES -->
+    <div id="petImages">
+      <div class="egg-img-container">
+        <img
+          id="mEggImage"
+          class="wobble"
+          src="./images/Background/neweggpic.png"
+          alt="testing image"
+        />
+        <img
+          id="rEggImage"
+          class="wobble"
+          src="./images/Background/neweggpic.png"
+          alt="testing image"
+        />
+      </div>
+    </div>
+
+    <!-- PET SELECT BUTTONS -->
+
+    <div class="pet-choice-container">
+      <div class="pet-choice">
+        <p id="petChoice">Choose your pet!</p>
+        <div class="btn-choice-container">
+          <button id="monkeyButton" type="button">Monkey</button>
+          <button id="rabbitButton" type="button">Rabbit</button>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+    <!-- PAGE TWO -->
+    <!-- PET NAME (pet's name, input box, submit button)-->
+    <div class="page-two-container">
+      <div class="pet-container">
+        <img
+          id="rabbitImage"
+          src="./Images/Rabbit/HappyRabbit.png"
+          alt="rabbit image"
+        />
+        <img
+          id="monkeyImage"
+          src="./images/Monkey/monkeyHappy.png"
+          alt="monkey image"
+        />
+      </div>
+      <div id="namePet">
+        <div class="petName-title">
+          <p id="petNameHeading">Pet name:</p>
+          <p id="petName"></p>
+          <input id="input" type="text" placeholder="ENTER TEXT HERE" />
+
+
+
+         
+      </div>
+        <button id="submit">SUBMIT</button>
+      </div>
+
+ <!-- PET STATS LABELS -->
+ <div class="allStats-container">
+  <div>
+    <ul id="petStats">
+      <!-- <li>Health:</li>  -->
+      <li>Hunger:</li>
+      <li>Thirst:</li>
+      <li>Cleanliness:</li>
+      <li>Happiness:</li>
+    </ul>
+  </div>
+
+  <!-- PET STATS TABLE  -->
+  <div id="petStatsTable">
+    <ul>
+      <!-- <li id="health">0</li> -->
+      <li id="hunger">0</li>
+      <li id="thirst">0</li>
+      <li id="cleanliness">0</li>
+      <li id="happiness">0</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+      <!-- PET FUNCTION BUTTONS -->
+      <div id="functionButtons">
+        
+        <div class="fwButton-container">
+        <button id="feedButton">FEED</button>
+        <button id="waterButton">WATER</button>
+      </div>
+
+      <div class="cpButton-container">
+        <button id="cleanButton">CLEAN</button>
+        <button id="playButton">PLAY</button>
+      </div>
+      
+      </div>
+
+        <div class="tButton-container">
+        <button id="tickleButton">TICKLE</button>
+      </div>
+
+      </div>
+
+
+
+
+<div class="status-container">
+      <div id="userContent">
+        <p id="statusLabel">CONSOLE:</p>
+        <p id="statusBox">[Tips about your pets health!]</p>
+      </div>
+    </div>
+
+
+      
+    </div>
+
+    <script src="cyberscript.js"></script>
+  </body>
+</html>
+
+<!-- PET SELECTOR BOX -->
+<!-- <div>
+    <label for="choosePet">Choose a pet:</label>
+    <select name="choosePet" id="choosePet">
+    <option value=""></option>
+    <option value="monkey">Monkey</option>
+    <option value="rabbit">Rabbit</option>
+    </select>
+</div> -->
