@@ -8,7 +8,7 @@ body {
   height: 100vh;
   border: 8px solid black;
   /* padding: 5px; */
-  position: relative;
+  position: absolute;
   font-family: Comic Sans MS, "Courier New", Courier, monospace;
   overflow: hidden;
 }
@@ -40,6 +40,7 @@ body {
   z-index: -1;
   height: 100%;
   width: 100vw;
+  
 }
 
 #backgroundImage1 {
@@ -47,7 +48,10 @@ body {
   z-index: -1;
   height: 100%;
   width: 100vw;
+  overflow: hidden;
 }
+
+
 
 .pet-choice-container {
   /* border: 2px solid red; */
@@ -72,6 +76,7 @@ body {
 #petChoice {
   font-size: 18px;
   border: 2px solid black;
+  font-weight: bolder;
   padding: 4px;
 }
 
@@ -85,7 +90,7 @@ body {
 }
 
 #rabbitButton {
-    cursor: pointer;
+  cursor: pointer;
   margin-left: 50px;
   font-size: 17px;
   font-family: Comic Sans MS;
@@ -110,7 +115,7 @@ body {
 }
 
 #monkeyButton {
-    cursor: pointer;
+  cursor: pointer;
   font-size: 17px;
   font-family: Comic Sans MS;
   width: 73px;
@@ -161,7 +166,8 @@ body {
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
-@-webkit-keyframes wobble {  0% {
+@-webkit-keyframes wobble {
+  0% {
     -webkit-transform: none;
     transform: none;
   }
@@ -222,199 +228,237 @@ body {
 }
 
 
-/* CURSOR CAR PARK | | | | | */
 /*///////////// PAGE TWO //////////// */
-
 
 /* BACKGROUND IMAGES */
 .rabbit-background {
   /* border: 2px solid red; */
+  position: absolute;
+  margin-right: 20%;
+  width: 110vw;
+  height: 100vh;
+}
+.monkey-background {
+  /* border: 2px solid red; */
   width: 100vw;
   height: 100vh;
 }
- .monkey-background{
-        /* border: 2px solid red; */
-        width: 100vw;
- }
 
-    /* container */
-    .page-two-container{
-        position: absolute;
-        top:0;
-        z-index:5;
-        background-color: 2px solid orange;
-        width: 100vw;
-        height: 100vh;
-    }
-    /* pet image container */
-    .pet-container{
-        margin-left: 26%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 2px solid red; */
-        height: 90%;
-        width: 50vw;
+/* container */
+.page-two-container {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  background-color: 2px solid orange;
+  width: 100vw;
+  height: 100vh;
+}
+/* pet image container */
+.pet-container {
+  margin-left: 26%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  height: 90%;
+  width: 50vw;
+}
+/* pet imgs */
+#rabbitImage {
+  /* border:2px solid blue; */
+  margin-bottom: -125px;
+  height: 65%;
+}
 
-        
-    }
-    /* pet imgs */
-    #rabbitImage{
-        /* border:2px solid blue; */
-        margin-bottom: -125px ;
-        height: 55%;
+/* pet name container */
+#namePet {
+  /* padding: 20px; */
+  position: absolute;
+  top: 5%;
+  /* border: 2px solid red; */
+  width: 25%;
+}
+.petName-title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  /* border: 2px solid black; */
+  font-weight: bolder;
+  padding: 4px;
+}
 
-    }
+input {
+  margin-left: 5px;
+}
+#submit {
+  display: flex;
+  margin-left: 42%;
+  margin-top: 10px;
+  font-family: Lato;
+  font-weight: 0;
+  font-size: 12px;
+  color: #fff;
+  background: linear-gradient(90deg, #111212 0%, #d0c5d1 100%);
+  padding: 4px 8px;
+  border: solid #f5f9fc 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 10px;
+  transition: 2210ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
 
-    /* pet name container */
-    #namePet{
-       /* padding: 20px; */
-       position: absolute;
-       top: 5%;
-        /* border: 2px solid red; */
-        width: 25%;
-    }
-     .petName-title{
-        display:flex;
-        justify-content: center;
-    }
-    input{
-      margin-left:5px ;
-    } 
-    #submit{
-      display: flex;
-      margin-left:36% ;
-      margin-top: 10px
-    }
+#submit:hover {
+  transition: 2210ms;
+  padding: 6px 15px;
+  transform: translateY(-0px);
+  background: linear-gradient(90deg, #111212 0%, #d0c5d1 100%);
+  color: #f4faf4;
+  border: solid 2px #f1f5f0;
+}
 
-    .allStats-container{
-      /* background-color: blue; */
-      position: absolute;
-      top: 0;
-      /* height: 30%; */
-      width: 30%;
-      z-index: 15;
-      margin-top: 5%;
-      margin-left: 9%;  
-    }
+.allStats-container {
+  /* background-color: blue; */
+  position: absolute;
+  top: 0;
+  /* height: 30%; */
+  width: 30%;
+  z-index: 15;
+  margin-top: 5%;
+  margin-left: 9%;
+}
 
-    .status-container{
-      /* background-color: blue; */
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-top: 5%;
-      margin-right: 9%;
-    }
+li {
+  font-size: 18px;
+  /* border: 2px solid black; */
+  font-weight: bolder;
+  padding: 4px;
+}
 
-    #functionButtons{
-      background-color: red;
-      /* position: absolute; */
-      /* margin-bottom: 5%; */
-    }
+.status-container {
+  /* background-color: blue; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5%;
+  margin-right: 9%;
+}
 
-    .fwButton-container{
-      /* background-color: aqua; */
-      width: 20%;
-      position: absolute;
-      z-index: 20;
-      left: 0;
-      bottom: 0;
-      margin-left: 25%;
-      padding-inline: 3%;
-      margin-bottom: 3%;
-    }
+p {
+  font-size: 18px;
+  /* border: 2px solid black; */
+  font-weight: bolder;
+  padding: 4px;
+}
 
-  #feedButton{      
-      cursor: pointer;
-      font-size: 17px;
-      font-family: Comic Sans MS;
-      width: 73px;
-      height: 73px;
-      border-width: 4px;
-      color: #fff;
-      border-color: white(0, 0, 0, 1);
-      font-weight: bold;
-      font-style: italic;
-      border-top-left-radius: 41px;
-      border-top-right-radius: 41px;
-      border-bottom-left-radius: 41px;
-      border-bottom-right-radius: 41px;
-      box-shadow: inset 1px 1px 9px -3px #fff;
-      text-shadow: inset 1px 1px 0px #2f6627;
-      background: rgba(0, 0, 0, 1);
-    }
+#functionButtons {
+  background-color: red;
+  /* position: absolute; */
+  /* margin-bottom: 5%; */
+}
 
-    #waterButton{
-      cursor: pointer;
-      font-size: 16px;
-      font-family: Comic Sans MS;
-      width: 73px;
-      height: 73px;
-      border-width: 4px;
-      color: #fff;
-      border-color: white(0, 0, 0, 1);
-      font-weight: bold;
-      font-style: italic;
-      border-top-left-radius: 41px;
-      border-top-right-radius: 41px;
-      border-bottom-left-radius: 41px;
-      border-bottom-right-radius: 41px;
-      box-shadow: inset 1px 1px 9px -3px #fff;
-      text-shadow: inset 1px 1px 0px #2f6627;
-      background: rgba(0, 0, 0, 1);
-    }
-    
+.fwButton-container {
+  /* background-color: aqua; */
+  width: 20%;
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  bottom: 0;
+  margin-left: 25%;
+  padding-inline: 3%;
+  margin-bottom: 3%;
+}
 
-    .cpButton-container{
-      /* background-color: lightcoral; */
-      width: 20%;
-      position: absolute;
-      z-index: 20;
-      right: 0;
-      margin-right: 15%;
-      bottom: 0;
-      margin-bottom: 3%;
+#feedButton {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Comic Sans MS;
+  width: 73px;
+  height: 73px;
+  border-width: 4px;
+  color: #fff;
+  border-color: white(0, 0, 0, 1);
+  font-weight: bold;
+  font-style: italic;
+  border-top-left-radius: 41px;
+  border-top-right-radius: 41px;
+  border-bottom-left-radius: 41px;
+  border-bottom-right-radius: 41px;
+  box-shadow: inset 1px 1px 9px -3px #fff;
+  text-shadow: inset 1px 1px 0px #2f6627;
+  background: rgba(0, 0, 0, 1);
+}
 
-      
-    }
+#waterButton {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Comic Sans MS;
+  width: 73px;
+  height: 73px;
+  border-width: 4px;
+  color: #fff;
+  border-color: white(0, 0, 0, 1);
+  font-weight: bold;
+  font-style: italic;
+  border-top-left-radius: 41px;
+  border-top-right-radius: 41px;
+  border-bottom-left-radius: 41px;
+  border-bottom-right-radius: 41px;
+  box-shadow: inset 1px 1px 9px -3px #fff;
+  text-shadow: inset 1px 1px 0px #2f6627;
+  background: rgba(0, 0, 0, 1);
+}
 
-    #cleanButton{
-      cursor: pointer;
-      font-size: 17px;
-      font-family: Comic Sans MS;
-      width: 73px;
-      height: 73px;
-      border-width: 4px;
-      color: #fff;
-      border-color: white(0, 0, 0, 1);
-      font-weight: bold;
-      font-style: italic;
-      border-top-left-radius: 41px;
-      border-top-right-radius: 41px;
-      border-bottom-left-radius: 41px;
-      border-bottom-right-radius: 41px;
-      box-shadow: inset 1px 1px 9px -3px #fff;
-      text-shadow: inset 1px 1px 0px #2f6627;
-      background: rgba(0, 0, 0, 1);
-    }
-    
-    #playButton{
-    cursor: pointer;
-    font-size: 17px;
-    font-family: Comic Sans MS;
-    width: 73px;
-    height: 73px;
-    border-width: 4px;
-    color: #fff;
-    border-color: white(0, 0, 0, 1);
-    font-weight: bold;
-    font-style: italic;
-    border-top-left-radius: 41px;
-    border-top-right-radius: 41px;
-    border-bottom-left-radius: 41px;
-    border-bottom-right-radius: 41px;
-    box-shadow: inset 1px 1px 9px -3px #fff;
-    text-shadow: inset 1px 1px 0px #2f6627;
-    background: rgba(0, 0, 0, 1);
-  }
+.cpButton-container {
+  /* background-color: lightcoral; */
+  width: 20%;
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  margin-right: 15%;
+  bottom: 0;
+  margin-bottom: 3%;
+}
+
+#cleanButton {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Comic Sans MS;
+  width: 73px;
+  height: 73px;
+  border-width: 4px;
+  color: #fff;
+  border-color: white(0, 0, 0, 1);
+  font-weight: bold;
+  font-style: italic;
+  border-top-left-radius: 41px;
+  border-top-right-radius: 41px;
+  border-bottom-left-radius: 41px;
+  border-bottom-right-radius: 41px;
+  box-shadow: inset 1px 1px 9px -3px #fff;
+  text-shadow: inset 1px 1px 0px #2f6627;
+  background: rgba(0, 0, 0, 1);
+}
+
+#playButton {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Comic Sans MS;
+  width: 73px;
+  height: 73px;
+  border-width: 4px;
+  color: #fff;
+  border-color: white(0, 0, 0, 1);
+  font-weight: bold;
+  font-style: italic;
+  border-top-left-radius: 41px;
+  border-top-right-radius: 41px;
+  border-bottom-left-radius: 41px;
+  border-bottom-right-radius: 41px;
+  box-shadow: inset 1px 1px 9px -3px #fff;
+  text-shadow: inset 1px 1px 0px #2f6627;
+  background: rgba(0, 0, 0, 1);
+}
