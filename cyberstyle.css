@@ -347,6 +347,11 @@ li {
   margin-right: 9%;
 }
 
+
+
+
+
+
 p {
   font-size: 18px;
   /* border: 2px solid black; */
@@ -393,6 +398,26 @@ p {
 }
 
 #waterButton {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Comic Sans MS;
+  width: 73px;
+  height: 73px;
+  border-width: 4px;
+  color: #fff;
+  border-color: white(0, 0, 0, 1);
+  font-weight: bold;
+  font-style: italic;
+  border-top-left-radius: 41px;
+  border-top-right-radius: 41px;
+  border-bottom-left-radius: 41px;
+  border-bottom-right-radius: 41px;
+  box-shadow: inset 1px 1px 9px -3px #fff;
+  text-shadow: inset 1px 1px 0px #2f6627;
+  background: rgba(0, 0, 0, 1);
+}
+
+.tickleBtn{
   cursor: pointer;
   font-size: 16px;
   font-family: Comic Sans MS;
