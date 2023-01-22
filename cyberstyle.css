@@ -255,12 +255,13 @@ body {
 }
 /* pet image container */
 .pet-container {
+  /* background-color: red; */
   margin-left: 26%;
   display: flex;
   align-items: center;
   justify-content: center;
   /* border: 2px solid red; */
-  height: 90%;
+    height: 90%;
   width: 50vw;
 }
 /* pet imgs */
@@ -269,6 +270,7 @@ body {
   margin-bottom: -125px;
   height: 65%;
 }
+
 
 /* pet name container */
 #namePet {
@@ -344,12 +346,8 @@ li {
   top: 0;
   right: 0;
   margin-top: 5%;
-  margin-right: 9%;
+  margin-right: 4%;
 }
-
-
-
-
 
 
 p {
@@ -366,7 +364,7 @@ p {
 }
 
 .fwButton-container {
-  /* background-color: aqua; */
+  /* border: 2px solid red; */
   width: 20%;
   position: absolute;
   z-index: 20;
@@ -395,6 +393,8 @@ p {
   box-shadow: inset 1px 1px 9px -3px #fff;
   text-shadow: inset 1px 1px 0px #2f6627;
   background: rgba(0, 0, 0, 1);
+  position: relative;
+  z-index: 50;
 }
 
 #waterButton {
@@ -417,6 +417,19 @@ p {
   background: rgba(0, 0, 0, 1);
 }
 
+/* .tButton-container{
+  border: red 3px solid;
+  position: absolute;
+  z-index: 100;
+  width: 20%;
+  top: 0;
+  margin-inline-start: 20%;
+  
+  margin-inline-end: 50%; 
+     margin-bottom: 20%;
+  
+} */
+
 .tickleBtn{
   cursor: pointer;
   font-size: 16px;
@@ -435,6 +448,15 @@ p {
   box-shadow: inset 1px 1px 9px -3px #fff;
   text-shadow: inset 1px 1px 0px #2f6627;
   background: rgba(0, 0, 0, 1);
+  /* margin-left:20%; */
+  z-index: 100;
+  position: relative;
+  /* top:50; */
+  /* left:-50; */
+  margin-top: 12%;
+ margin-left: 31.5%;
+   
+
 }
 
 .cpButton-container {

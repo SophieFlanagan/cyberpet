@@ -20,7 +20,6 @@ const backgroundImage1 = document.getElementById("backgroundImage1");
 monkeyBackground.style.display = "none";
 rabbitBackground.style.display = "none";
 
-
 // BUTTONS
 const monkeyButton = document.getElementById("monkeyButton");
 const rabbitButton = document.getElementById("rabbitButton");
@@ -41,11 +40,10 @@ const happiness = document.getElementById("happiness");
 const cleanliness = document.getElementById("cleanliness");
 
 const petStatsTable = document.getElementById("petStatsTable");
-const statusBox1 = document.getElementById("statusBox1")
-const statusBox2 = document.getElementById("statusBox2")
-const statusBox3 = document.getElementById("statusBox3")
-const statusBox4 = document.getElementById("statusBox4")
-
+const statusBox1 = document.getElementById("statusBox1");
+const statusBox2 = document.getElementById("statusBox2");
+const statusBox3 = document.getElementById("statusBox3");
+const statusBox4 = document.getElementById("statusBox4");
 
 //NEW TEXT STATUS BOX INSTEAD OF ALERTS
 const statusBox = document.getElementById("userContent");
@@ -64,18 +62,16 @@ petStats.style.display = "none";
 petStatsTable.style.display = "none";
 
 monkeyButton.addEventListener("click", () => {
- 
-
-  console.log("clicked")
+  console.log("clicked");
   if ((monkeyImage.style.display = "block")) {
     mEggImage.style.display = "none";
     rEggImage.style.display = "none";
 
     backgroundImage1.style.display = "none";
-    
+
     rabbitButton.style.display = "none";
     monkeyButton.style.display = "none";
-    
+
     rabbitImage.style.display = "none";
     petChoiceText.style.display = "none";
     namePet.style.display = "block";
@@ -87,11 +83,9 @@ rabbitButton.addEventListener("click", () => {
   if ((rabbitImage.style.display = "block")) {
     rEggImage.style.display = "none";
     mEggImage.style.display = "none";
-    
+
     backgroundImage1.style.display = "none";
-    
-    
-    
+
     monkeyBackground.style.display = "none";
     monkeyImage.style.display = "none";
     monkeyButton.style.display = "none";
@@ -100,11 +94,7 @@ rabbitButton.addEventListener("click", () => {
     namePet.style.display = "block";
     rabbitBackground.style.display = "block";
   }
-  
 });
-
-
-
 
 // NAME SUBMIT EVENT
 submit.addEventListener("click", () => {
@@ -116,19 +106,17 @@ submit.addEventListener("click", () => {
   statusBox.style.display = "block";
   checkStats();
 
-// Class Creation Choice
-  if(monkeyImage.style.display == "block"){
+  // Class Creation Choice
+  if (monkeyImage.style.display == "block") {
     // Monkey = new Tickle(petName, "monkey", 10, 20, 30, 40, 10);
-   renderMonkeyData()
+    renderMonkeyData();
     startMonkeyTimer();
-    tickleFunction()
-
-  } else if(rabbitImage.style.display == "block"){
-  //  Rabbit = new BasePet(petName, "rabbit", 10, 20, 30, 40);
-  renderRabbitData()
-   startRabbitTimer();
+    tickleFunction();
+  } else if (rabbitImage.style.display == "block") {
+    //  Rabbit = new BasePet(petName, "rabbit", 10, 20, 30, 40);
+    renderRabbitData();
+    startRabbitTimer();
   }
-
 });
 
 // BASEPET
@@ -144,31 +132,35 @@ class BasePet {
 }
 
 class Tickle extends BasePet {
-  constructor(name, type, hungerLevel, thirstLevel, cleanLevel, happyLevel, tickle) {
-  super(name, type, hungerLevel, thirstLevel, cleanLevel, happyLevel)
-    this.tickle = tickle
+  constructor(
+    name,
+    type,
+    hungerLevel,
+    thirstLevel,
+    cleanLevel,
+    happyLevel,
+    tickle
+  ) {
+    super(name, type, hungerLevel, thirstLevel, cleanLevel, happyLevel);
+    this.tickle = tickle;
     // tickleFunction()
-   
   }
-  
-  }
-
-  
-  
-// FUNCTION FOR EXTENDED CLASS
-const tickleFunction = () =>{
-let tickleBtn = document.createElement('button')
-tickleBtn.textContent = 'TICKLE'
-referenceNode = document.querySelector('.tButton-container')
-referenceNode.insertAdjacentElement(`afterend`, tickleBtn)
-tickleBtn.className = "tickleBtn"
-tickleBtn.addEventListener("click", () =>{
-Monkey.happyLevel += 15
-renderMonkeyData()
-monkeyGiggle.play()
-})
 }
 
+// FUNCTION FOR EXTENDED CLASS
+const tickleFunction = () => {
+
+  let tickleBtn = document.createElement("button");
+  tickleBtn.textContent = "TICKLE";
+  referenceNode = document.querySelector(".tButton-container");
+  referenceNode.insertAdjacentElement(`afterend`, tickleBtn);
+  tickleBtn.className = "tickleBtn";
+  tickleBtn.addEventListener("click", () => {
+    Monkey.happyLevel += 15;
+    renderMonkeyData();
+    monkeyGiggle.play();
+  });
+};
 
 const Monkey = new Tickle(petName, "monkey", 100, 100, 100, 100, 100);
 const Rabbit = new BasePet(petName, "rabbit", 100, 100, 100, 100);
@@ -191,50 +183,48 @@ function renderRabbitData() {
 
 // function hunger.textcontent = this.hungerLevel
 feedButton.addEventListener("click", () => {
-
-  if(monkeyImage.style.display == "block"){
-    Monkey.hungerLevel += 10
+  if (monkeyImage.style.display == "block") {
+    Monkey.hungerLevel += 10;
     renderMonkeyData();
     console.log(Monkey.hungerLevel, "i am hunger level when fed");
   } else {
-    Rabbit.hungerLevel += 10
+    Rabbit.hungerLevel += 10;
     renderRabbitData();
     console.log(Rabbit.hungerLevel, "i am hunger level when fed");
   }
-
 });
 
 waterButton.addEventListener("click", () => {
-  if(monkeyImage.style.display == "block"){
-    Monkey.thirstLevel += 10
+  if (monkeyImage.style.display == "block") {
+    Monkey.thirstLevel += 10;
     renderMonkeyData();
-    console.log(Monkey.thirstLevel, "i am hunger level when fed");
+    console.log(Monkey.thirstLevel, "i am thirst level when thirstbutton");
   } else {
-    Rabbit.thirstLevel += 10
+    Rabbit.thirstLevel += 10;
     renderRabbitData();
-    console.log(Rabbit.thirstLevel, "i am hunger level when fed");
+    console.log(Rabbit.thirstLevel, "i am thirst level when thirstbutton");
   }
 });
 
 cleanButton.addEventListener("click", () => {
-  if(monkeyImage.style.display == "block"){
-    Monkey.cleanLevel += 10
+  if (monkeyImage.style.display == "block") {
+    Monkey.cleanLevel += 10;
     renderMonkeyData();
     console.log(Monkey.cleanLevel, "i am clean level when cleaned");
   } else {
-    Rabbit.cleanLevel += 10
+    Rabbit.cleanLevel += 10;
     renderRabbitData();
     console.log(Rabbit.cleanLevel, "i am clean level when cleaned");
   }
 });
 
 playButton.addEventListener("click", () => {
-  if(monkeyImage.style.display == "block"){
-    Monkey.happyLevel += 10
+  if (monkeyImage.style.display == "block") {
+    Monkey.happyLevel += 10;
     renderMonkeyData();
     console.log(Monkey.happyLevel, "i am happy level when played with");
   } else {
-    Rabbit.happyLevel += 10
+    Rabbit.happyLevel += 10;
     renderRabbitData();
     console.log(Rabbit.happyLevel, "i am happy level when played with");
   }
@@ -248,11 +238,11 @@ functionButtons.addEventListener("click", () => {
 // Checks ALL the pet's stat
 const checkStats = () => {
   // Checks the pet's HUNGER stat
+  if(monkeyImage.style.display == "block"){
   const checkHunger = () => {
-    switch (Monkey.hungerLevel || Rabbit.hungerLevel) {
+    switch (Monkey.hungerLevel) {
       case 200:
-        statusBox1.textContent =
-          `Oh No! ${petName.textContent} has died from being overfed! Game Over...`;      
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed! Game Over...`;
         break;
       case 170:
         statusBox1.textContent = `Warning! ${petName.textContent} is dying from being overfed!`;
@@ -273,21 +263,20 @@ const checkStats = () => {
         statusBox1.textContent = `Warning! ${petName.textContent} is dying from hunger!`;
         break;
       case 0:
-        statusBox1.textContent =
-          `Oh No! ${petName.textContent} has died from hunger! Game Over...`;
-        
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger! Game Over...`;
+       
     }
-  };
+  }
 
   // Checks the pet's THIRST stat
   const checkThirst = () => {
-    switch (Monkey.thirstLevel || Rabbit.hungerLevel) {
+  
+   switch (Monkey.thirstLevel) {
       case 200:
-        statusBox2.textContent =
-          `Oh No! ${petName.textContent} got over-hydrated & died! Game Over...`;
-         break;
+        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died! Game Over...`;
+        break;
       case 170:
-        statusBox2.textContent = `Warning! ${petName.textContent} is over-hydrated!`
+        statusBox2.textContent = `Warning! ${petName.textContent} is over-hydrated!`;
         break;
       case 150:
         statusBox2.textContent = `${petName.textContent} is feeling bloated from drinking too much water!`;
@@ -305,17 +294,15 @@ const checkStats = () => {
         statusBox2.textContent = `Warning! ${petName.textContent} is dying from dehydation!`;
         break;
       case 0:
-        statusBox2.textContent = `${petName.textContent} has died from thirst! Game Over...`
+        statusBox2.textContent = `${petName.textContent} has died from thirst! Game Over...`;
     }
   };
 
   // Checks the pet's CLEAN stat
   const checkClean = () => {
-    switch (Monkey.cleanLevel || Rabbit.hungerLevel) {
+    switch (Monkey.cleanLevel) {
       case 200:
-        statusBox3.textContent =
-          `Oh No! ${petName.textContent} became too clean. Their immune system failed & they died! Game Over...`;
-        
+        statusBox3.textContent = `Oh No! ${petName.textContent} became too clean. Their immune system failed & they died! Game Over...`;
         break;
       case 170:
         statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean! Some bacteria are friendly!`;
@@ -336,18 +323,15 @@ const checkStats = () => {
         statusBox3.textContent = `Warning! ${petName.textContent} is dying from being so dirty!`;
         break;
       case 0:
-        statusBox3.textContent =
-          `Oh No! ${petName.textContent} has died! The dirt mounted up and so did the germs. Game Over...`;
-        
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died! The dirt mounted up and so did the germs. Game Over...`;
     }
   };
 
   // Checks the pet's HAPPY stat
   const checkHappy = () => {
-    switch (Monkey.happyLevel || Rabbit.hungerLevel) {
+    switch (Monkey.happyLevel) {
       case 200:
-        statusBox4.textContent =
-          `Oh No! ${petName.textContent} has died from exhastion! Fun is great, but we need rest too. Game Over!`;
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion! Fun is great, but we need rest too. Game Over!`;
         break;
       case 170:
         statusBox4.textContent = `Warning! ${petName.textContent} is dying from having too much fun. Your pet needs rest!`;
@@ -368,77 +352,188 @@ const checkStats = () => {
         statusBox4.textContent = `Warning! ${petName.textContent} is dying from unhappiness!`;
         break;
       case 0:
-        statusBox4.textContent =
-          `Oh No! ${petName.textContent} has died from unhappiness! Game Over...`;
-        
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness! Game Over...`;
     }
-  };
+  }
   checkHunger();
   checkThirst();
   checkClean();
   checkHappy();
+} else {
+  const checkHunger = () => {
+    switch (Rabbit.hungerLevel) {
+      case 200:
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed! Game Over...`;
+        break;
+      case 170:
+        statusBox1.textContent = `Warning! ${petName.textContent} is dying from being overfed!`;
+        break;
+      case 150:
+        statusBox1.textContent = `${petName.textContent} is feeling stuffed!`;
+        break;
+      case 100:
+        statusBox1.textContent = `${petName.textContent} has a full tummy and is content!`;
+        break;
+      case 70:
+        statusBox1.textContent = `${petName.textContent} is feeling peckish!`;
+        break;
+      case 50:
+        statusBox1.textContent = `${petName.textContent} is getting very hungry!`;
+        break;
+      case 20:
+        statusBox1.textContent = `Warning! ${petName.textContent} is dying from hunger!`;
+        break;
+      case 0:
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger! Game Over...`;
+    }
+  }
+
+  // Checks the pet's THIRST stat
+  const checkThirst = () => {
+  
+   switch (Rabbit.thirstLevel) {
+      case 200:
+        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died! Game Over...`;
+        break;
+      case 170:
+        statusBox2.textContent = `Warning! ${petName.textContent} is over-hydrated!`;
+        break;
+      case 150:
+        statusBox2.textContent = `${petName.textContent} is feeling bloated from drinking too much water!`;
+        break;
+      case 100:
+        statusBox2.textContent = `${petName.textContent} is content with their current thirst level!`;
+        break;
+      case 70:
+        statusBox2.textContent = `${petName.textContent} is feeling a little thirsty!`;
+        break;
+      case 50:
+        statusBox2.textContent = `${petName.textContent} is dehydated!`;
+        break;
+      case 20:
+        statusBox2.textContent = `Warning! ${petName.textContent} is dying from dehydation!`;
+        break;
+      case 0:
+        statusBox2.textContent = `${petName.textContent} has died from thirst! Game Over...`;
+    }
+  };
+
+  // Checks the pet's CLEAN stat
+  const checkClean = () => {
+    switch (Rabbit.cleanLevel) {
+      case 200:
+        statusBox3.textContent = `Oh No! ${petName.textContent} became too clean. Their immune system failed & they died! Game Over...`;
+        break;
+      case 170:
+        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean! Some bacteria are friendly!`;
+        break;
+      case 150:
+        statusBox3.textContent = `${petName.textContent} is getting frustrated with all your cleaning!`;
+        break;
+      case 100:
+        statusBox3.textContent = `${petName.textContent} is looking clean & tidy. Perfect!`;
+        break;
+      case 70:
+        statusBox3.textContent = `${petName.textContent} is looking a little untidy...`;
+        break;
+      case 50:
+        statusBox3.textContent = `${petName.textContent} is looking very dirty!`;
+        break;
+      case 20:
+        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being so dirty!`;
+        break;
+      case 0:
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died! The dirt mounted up and so did the germs. Game Over...`;
+    }
+  };
+
+  // Checks the pet's HAPPY stat
+  const checkHappy = () => {
+    switch (Rabbit.happyLevel) {
+      case 200:
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion! Fun is great, but we need rest too. Game Over!`;
+        break;
+      case 170:
+        statusBox4.textContent = `Warning! ${petName.textContent} is dying from having too much fun. Your pet needs rest!`;
+        break;
+      case 150:
+        statusBox4.textContent = `${petName.textContent} is feeling overstimulated!`;
+        break;
+      case 100:
+        statusBox4.textContent = `${petName.textContent} is feeling content and happy.`;
+        break;
+      case 70:
+        statusBox4.textContent = `${petName.textContent} is feeling a little bored...`;
+        break;
+      case 50:
+        statusBox4.textContent = `${petName.textContent} is feeling very sad!`;
+        break;
+      case 20:
+        statusBox4.textContent = `Warning! ${petName.textContent} is dying from unhappiness!`;
+        break;
+      case 0:
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness! Game Over...`;
+    }
+  }
+  checkHunger();
+  checkThirst();
+  checkClean();
+  checkHappy();
+}
+  
 };
 
-
 //MONKEY TIMER Depletes the monkeys health stats
-const startMonkeyTimer = () =>{
-const timer = setInterval(() => {
-
-  // if monkey button was pressed then run this data
-  Monkey.hungerLevel -= 5, checkStats();
-  Monkey.thirstLevel -= 5, checkStats();
-  Monkey.cleanLevel -= 5, checkStats();
-  Monkey.happyLevel -= 5, checkStats();
-  renderMonkeyData();
-
-  console.log(Monkey.hungerLevel, "i am monkey hunger");
-  if (Monkey.hungerLevel === 0 || Monkey.thirstLevel === 0 || Monkey.cleanLevel === 0 || Monkey.happyLevel === 0 ) {
-    clearInterval(timer);
+const startMonkeyTimer = () => {
+  const timer = setInterval(() => {
+    // if monkey button was pressed then run this data
+    (Monkey.hungerLevel -= 5), checkStats();
+    (Monkey.thirstLevel -= 5), checkStats();
+    (Monkey.cleanLevel -= 5), checkStats();
+    (Monkey.happyLevel -= 5), checkStats();
     renderMonkeyData();
 
-
-  }
-}, 5000);
-}
+    console.log(Monkey.hungerLevel, "i am monkey hunger");
+    if (
+      Monkey.hungerLevel === 0 ||
+      Monkey.thirstLevel === 0 ||
+      Monkey.cleanLevel === 0 ||
+      Monkey.happyLevel === 0
+    ) {
+      clearInterval(timer);
+      renderMonkeyData();
+      refresh();
+    }
+  }, 5000);
+};
 
 // RABBIT TIMER
-const startRabbitTimer = () =>{
+const startRabbitTimer = () => {
   const timer = setInterval(() => {
-  // if rabbit pressed then run this data
-  Rabbit.hungerLevel -= 5, checkStats();
-  Rabbit.thirstLevel -= 5, checkStats();
-  Rabbit.cleanLevel -= 5, checkStats();
-  Rabbit.happyLevel -= 5, checkStats();
-  renderRabbitData();
-  
-  console.log(Rabbit.hungerLevel, "i am rabbit hunger");
-  if (Rabbit.hungerLevel === 0 || Rabbit.thirstLevel === 0 || Rabbit.cleanLevel === 0 || Rabbit.happyLevel === 0 ) {
-    clearInterval(timer);
+    // if rabbit pressed then run this data
+    (Rabbit.hungerLevel -= 5), checkStats();
+    (Rabbit.thirstLevel -= 5), checkStats();
+    (Rabbit.cleanLevel -= 5), checkStats();
+    (Rabbit.happyLevel -= 5), checkStats();
     renderRabbitData();
 
-  }
-}, 5000);
+    console.log(Rabbit.hungerLevel, "i am rabbit hunger");
+    if (
+      Rabbit.hungerLevel === 0 ||
+      Rabbit.thirstLevel === 0 ||
+      Rabbit.cleanLevel === 0 ||
+      Rabbit.happyLevel === 0
+    ) {
+      clearInterval(timer);
+      renderRabbitData();
+      refresh();
+    }
+  }, 5000);
+};
+
+// to do - Create reload button to reset game. 
+const refresh = () =>{
+  alert(`Oh No! ${petName.textContent} has died! Game Over...`)
+  document.location.reload()
 }
 
-
-
-
-
-
-
-// Game Over alert and reload at 200 or 0
-// const gameOver = () => {
-//   checkStats = () => {
-//   renderMonkeyData()
-//   renderRabbitData()
-//     switch (Monkey.hungerLevel || Monkey.thirstLevel || Monkey.cleanLevel || Monkey.happyLevel || Rabbit.hungerLevel || Rabbit.thirstLevel || Rabbit.cleanLevel || Rabbit.happyLevel) {
-//       case 200:
-//         alert("GAME OVER");
-//         document.location.reload()
-//         break;
-//         case 0:
-//         alert("GAME OVER");
-//         document.location.reload()
-//         break;
-//     }
-//   } 
