@@ -231,7 +231,7 @@ playButton.addEventListener("click", () => {
 });
 
 functionButtons.addEventListener("click", () => {
-  console.log("I have been clicked");
+  console.log("I have been clicked, checking stats");
   checkStats();
 });
 
@@ -240,119 +240,143 @@ const checkStats = () => {
   // Checks the pet's HUNGER stat
   if(monkeyImage.style.display == "block"){
   const checkHunger = () => {
+    if(Monkey.hungerLevel >= 200){
+      renderMonkeyData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
     switch (Monkey.hungerLevel) {
       case 200:
-        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed! Game Over...`;
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed!`;
         break;
       case 170:
-        statusBox1.textContent = `Warning! ${petName.textContent} is dying from being overfed!`;
+        statusBox1.textContent = `Warning! ${petName.textContent} is dying from eating too much!`;
         break;
       case 150:
-        statusBox1.textContent = `${petName.textContent} is feeling stuffed!`;
+        statusBox1.textContent = `${petName.textContent} is feeling stuffed.`;
         break;
       case 100:
-        statusBox1.textContent = `${petName.textContent} has a full tummy and is content!`;
+        statusBox1.textContent = `${petName.textContent} has a full tummy and is content.`;
         break;
       case 70:
-        statusBox1.textContent = `${petName.textContent} is feeling peckish!`;
+        statusBox1.textContent = `${petName.textContent} is feeling peckish.`;
         break;
       case 50:
-        statusBox1.textContent = `${petName.textContent} is getting very hungry!`;
+        statusBox1.textContent = `${petName.textContent} is getting very hungry.`;
         break;
       case 20:
         statusBox1.textContent = `Warning! ${petName.textContent} is dying from hunger!`;
         break;
       case 0:
-        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger! Game Over...`;
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger!`;
        
     }
   }
 
   // Checks the pet's THIRST stat
   const checkThirst = () => {
+    if(Monkey.hungerThirst >= 200){
+      renderMonkeyData()
+      refresh()
+    } else{
+      console.log("fail")
+    }    
   
    switch (Monkey.thirstLevel) {
       case 200:
-        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died! Game Over...`;
+        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died!`;
         break;
       case 170:
         statusBox2.textContent = `Warning! ${petName.textContent} is over-hydrated!`;
         break;
       case 150:
-        statusBox2.textContent = `${petName.textContent} is feeling bloated from drinking too much water!`;
+        statusBox2.textContent = `${petName.textContent} is bloated from drinking too much water.`;
         break;
       case 100:
-        statusBox2.textContent = `${petName.textContent} is content with their current thirst level!`;
+        statusBox2.textContent = `${petName.textContent}'s water level is perfect.`;
         break;
       case 70:
-        statusBox2.textContent = `${petName.textContent} is feeling a little thirsty!`;
+        statusBox2.textContent = `${petName.textContent} is feeling a little thirsty.`;
         break;
       case 50:
-        statusBox2.textContent = `${petName.textContent} is dehydated!`;
+        statusBox2.textContent = `${petName.textContent} is dehydated.`;
         break;
       case 20:
-        statusBox2.textContent = `Warning! ${petName.textContent} is dying from dehydation!`;
+        statusBox2.textContent = `Warning! ${petName.textContent} is dying from thirst!`;
         break;
       case 0:
-        statusBox2.textContent = `${petName.textContent} has died from thirst! Game Over...`;
+        statusBox2.textContent = `Oh No! ${petName.textContent} has died from dehydration!`;
     }
   };
 
   // Checks the pet's CLEAN stat
   const checkClean = () => {
+    if(Monkey.cleanLevel >= 200){
+      renderMonkeyData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
     switch (Monkey.cleanLevel) {
       case 200:
-        statusBox3.textContent = `Oh No! ${petName.textContent} became too clean. Their immune system failed & they died! Game Over...`;
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died from an over-active immune-system!`;
         break;
       case 170:
-        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean! Some bacteria are friendly!`;
+        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean!`;
         break;
       case 150:
-        statusBox3.textContent = `${petName.textContent} is getting frustrated with all your cleaning!`;
+        statusBox3.textContent = `${petName.textContent} is frustrated with all your cleaning.`;
         break;
       case 100:
-        statusBox3.textContent = `${petName.textContent} is looking clean & tidy. Perfect!`;
+        statusBox3.textContent = `${petName.textContent} is looking clean & tidy.`;
         break;
       case 70:
-        statusBox3.textContent = `${petName.textContent} is looking a little untidy...`;
+        statusBox3.textContent = `${petName.textContent} is looking a little disheveled.`;
         break;
       case 50:
-        statusBox3.textContent = `${petName.textContent} is looking very dirty!`;
+        statusBox3.textContent = `${petName.textContent} is looking very dirty.`;
         break;
       case 20:
         statusBox3.textContent = `Warning! ${petName.textContent} is dying from being so dirty!`;
         break;
       case 0:
-        statusBox3.textContent = `Oh No! ${petName.textContent} has died! The dirt mounted up and so did the germs. Game Over...`;
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died from alll the filth!`;
     }
   };
 
   // Checks the pet's HAPPY stat
   const checkHappy = () => {
+    if(Monkey.happyLevel >= 200){
+      renderMonkeyData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
     switch (Monkey.happyLevel) {
       case 200:
-        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion! Fun is great, but we need rest too. Game Over!`;
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion!`;
         break;
       case 170:
-        statusBox4.textContent = `Warning! ${petName.textContent} is dying from having too much fun. Your pet needs rest!`;
+        statusBox4.textContent = `Warning! ${petName.textContent} is dying. Your pet needs rest!`;
         break;
       case 150:
-        statusBox4.textContent = `${petName.textContent} is feeling overstimulated!`;
+        statusBox4.textContent = `${petName.textContent} is feeling overstimulated.`;
         break;
       case 100:
         statusBox4.textContent = `${petName.textContent} is feeling content and happy.`;
         break;
       case 70:
-        statusBox4.textContent = `${petName.textContent} is feeling a little bored...`;
+        statusBox4.textContent = `${petName.textContent} is feeling a little bored.`;
         break;
       case 50:
-        statusBox4.textContent = `${petName.textContent} is feeling very sad!`;
+        statusBox4.textContent = `${petName.textContent} is feeling very sad.`;
         break;
       case 20:
         statusBox4.textContent = `Warning! ${petName.textContent} is dying from unhappiness!`;
         break;
       case 0:
-        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness! Game Over...`;
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness!`;
     }
   }
   checkHunger();
@@ -361,118 +385,147 @@ const checkStats = () => {
   checkHappy();
 } else {
   const checkHunger = () => {
+
+    if(Rabbit.hungerLevel >= 200){
+      renderRabbitData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
+
     switch (Rabbit.hungerLevel) {
       case 200:
-        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed! Game Over...`;
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from being overfed!`;
         break;
       case 170:
-        statusBox1.textContent = `Warning! ${petName.textContent} is dying from being overfed!`;
+        statusBox1.textContent = `Warning! ${petName.textContent} is dying from eating too much!`;
         break;
       case 150:
-        statusBox1.textContent = `${petName.textContent} is feeling stuffed!`;
+        statusBox1.textContent = `${petName.textContent} is feeling stuffed.`;
         break;
       case 100:
-        statusBox1.textContent = `${petName.textContent} has a full tummy and is content!`;
+        statusBox1.textContent = `${petName.textContent} has a full tummy and is content.`;
         break;
       case 70:
-        statusBox1.textContent = `${petName.textContent} is feeling peckish!`;
+        statusBox1.textContent = `${petName.textContent} is feeling peckish.`;
         break;
       case 50:
-        statusBox1.textContent = `${petName.textContent} is getting very hungry!`;
+        statusBox1.textContent = `${petName.textContent} is getting very hungry.`;
         break;
       case 20:
         statusBox1.textContent = `Warning! ${petName.textContent} is dying from hunger!`;
         break;
       case 0:
-        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger! Game Over...`;
+        statusBox1.textContent = `Oh No! ${petName.textContent} has died from hunger!`;
     }
   }
 
   // Checks the pet's THIRST stat
   const checkThirst = () => {
   
+    if(Rabbit.thirstLevel >= 200){
+      renderRabbitData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
+
    switch (Rabbit.thirstLevel) {
       case 200:
-        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died! Game Over...`;
+        statusBox2.textContent = `Oh No! ${petName.textContent} got over-hydrated & died!`;
         break;
       case 170:
         statusBox2.textContent = `Warning! ${petName.textContent} is over-hydrated!`;
         break;
       case 150:
-        statusBox2.textContent = `${petName.textContent} is feeling bloated from drinking too much water!`;
+        statusBox2.textContent = `${petName.textContent} is bloated from drinking too much water.`;
         break;
       case 100:
-        statusBox2.textContent = `${petName.textContent} is content with their current thirst level!`;
+        statusBox2.textContent = `${petName.textContent}'s water level is perfect.`;
         break;
       case 70:
-        statusBox2.textContent = `${petName.textContent} is feeling a little thirsty!`;
+        statusBox2.textContent = `${petName.textContent} is feeling a little thirsty.`;
         break;
       case 50:
-        statusBox2.textContent = `${petName.textContent} is dehydated!`;
+        statusBox2.textContent = `${petName.textContent} is dehydated.`;
         break;
       case 20:
-        statusBox2.textContent = `Warning! ${petName.textContent} is dying from dehydation!`;
+        statusBox2.textContent = `Warning! ${petName.textContent} is dying from thirst!`;
         break;
       case 0:
-        statusBox2.textContent = `${petName.textContent} has died from thirst! Game Over...`;
+        statusBox2.textContent = `Oh No! ${petName.textContent} has died from dehydration!`;
     }
   };
 
   // Checks the pet's CLEAN stat
   const checkClean = () => {
+    if(Rabbit.cleanLevel >= 200){
+      renderRabbitData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
     switch (Rabbit.cleanLevel) {
       case 200:
-        statusBox3.textContent = `Oh No! ${petName.textContent} became too clean. Their immune system failed & they died! Game Over...`;
-        break;
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died from an over-active immune-system!`;
+      break;
       case 170:
-        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean! Some bacteria are friendly!`;
+        statusBox3.textContent = `Warning! ${petName.textContent} is dying from being too clean!`;
         break;
       case 150:
-        statusBox3.textContent = `${petName.textContent} is getting frustrated with all your cleaning!`;
+        statusBox3.textContent = `${petName.textContent} is frustrated with all your cleaning.`;
         break;
       case 100:
-        statusBox3.textContent = `${petName.textContent} is looking clean & tidy. Perfect!`;
+        statusBox3.textContent = `${petName.textContent} is looking clean & tidy.`;
         break;
       case 70:
-        statusBox3.textContent = `${petName.textContent} is looking a little untidy...`;
+        statusBox3.textContent = `${petName.textContent} is looking a little disheveled.`;
         break;
       case 50:
-        statusBox3.textContent = `${petName.textContent} is looking very dirty!`;
+        statusBox3.textContent = `${petName.textContent} is looking very dirty.`;
         break;
       case 20:
         statusBox3.textContent = `Warning! ${petName.textContent} is dying from being so dirty!`;
         break;
       case 0:
-        statusBox3.textContent = `Oh No! ${petName.textContent} has died! The dirt mounted up and so did the germs. Game Over...`;
+        statusBox3.textContent = `Oh No! ${petName.textContent} has died from alll the filth!`;
     }
   };
 
   // Checks the pet's HAPPY stat
   const checkHappy = () => {
+    
+    if(Rabbit.happyLevel >= 200){
+      renderRabbitData()
+      refresh()
+    } else{
+      console.log("fail")
+    }
+
     switch (Rabbit.happyLevel) {
       case 200:
-        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion! Fun is great, but we need rest too. Game Over!`;
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from exhastion!`;
         break;
       case 170:
-        statusBox4.textContent = `Warning! ${petName.textContent} is dying from having too much fun. Your pet needs rest!`;
+        statusBox4.textContent = `Warning! ${petName.textContent} is dying. Your pet needs rest!`;
         break;
       case 150:
-        statusBox4.textContent = `${petName.textContent} is feeling overstimulated!`;
+        statusBox4.textContent = `${petName.textContent} is feeling overstimulated.`;
         break;
       case 100:
         statusBox4.textContent = `${petName.textContent} is feeling content and happy.`;
         break;
       case 70:
-        statusBox4.textContent = `${petName.textContent} is feeling a little bored...`;
+        statusBox4.textContent = `${petName.textContent} is feeling a little bored.`;
         break;
       case 50:
-        statusBox4.textContent = `${petName.textContent} is feeling very sad!`;
+        statusBox4.textContent = `${petName.textContent} is feeling very sad.`;
         break;
       case 20:
         statusBox4.textContent = `Warning! ${petName.textContent} is dying from unhappiness!`;
         break;
       case 0:
-        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness! Game Over...`;
+        statusBox4.textContent = `Oh No! ${petName.textContent} has died from unhappiness!`;
     }
   }
   checkHunger();
@@ -537,3 +590,19 @@ const refresh = () =>{
   document.location.reload()
 }
 
+// game over - if states hit 200
+// const gameOver = ()=> {
+//   checkStats();
+//   renderMonkeyData()
+// if(
+//   Monkey.hungerLevel == 200 ||
+//   Monkey.thirstLevel == 200 ||
+//   Monkey.cleanLevel == 200 ||
+//   Monkey.happyLevel == 200
+// ) {
+//   refresh();
+//   console.log("i have been called")
+// }
+// }
+
+// gameOver()
